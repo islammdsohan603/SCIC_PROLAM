@@ -1,20 +1,13 @@
 
 
-var canConstruct = function (ransomNote, magazine) {
-  if (ransomNote.length > magazine.length) {
-    return false;
-  }
+var containsDuplicate = function (nums) {
+  const set = new Set();
 
-  for (let i = 0; i < ransomNote.length; i++) {
-    if (magazine.includes(ransomNote[i])) {
-      magazine = magazine.replace(ransomNote[i], '');
+  for (let i = 0; i < nums.length; i++) {
+    if (set.has(nums[i])) {
+      return true;
     }
-    else {
-      return false;
-    }
-
-
+    set.add(nums[i]);
   }
-
-  return true;
+  return false;
 }
